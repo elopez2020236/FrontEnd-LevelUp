@@ -5,13 +5,13 @@ import "../estilos/NavbarStyle.css";
 const Navbar = () => {
   return (
 
-    <div class="nav">
-      <div class="nav-header">
-        <div class="nav-title">
+    <div className="nav">
+      <div className="nav-header">
+        <div className="nav-title">
           Edwar
         </div>
       </div>
-      <div class="nav-links">
+      <div className="nav-links">
             <li className="nav-item">
               <Link className="nav-link" to="/">
                 Formulario
