@@ -5,20 +5,20 @@ import "../estilos/NavbarStyle.css";
 const Navbar = () => {
   return (
 
-    <div class="nav">
-      <div class="nav-header">
-        <div class="nav-title">
+    <div className="nav">
+      <div className="nav-header">
+        <div className="nav-title">
           Edwar
         </div>
       </div>
-      <div class="nav-links">
+      <div className="nav-links">
             <li className="nav-item">
               <Link className="nav-link" to="/">
                 Formulario
               </Link>
             </li>
             <li className="nav-item2">
-              <Link className="nav-link" to="/reportes/">
+              <Link className="nav-link" to="/reportes">
                 Reportes
               </Link>
             </li>

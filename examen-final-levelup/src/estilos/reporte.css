@@ -1,0 +1,32 @@
+.contenedor{
+    position: relative;
+  width: 90%;
+  margin: 2em auto;
+}
+.contenedor table{
+    border-collapse:separate;
+    margin: 1em 0 3em 0;
+    width: 100%;
+  }
+
+  .reportes{
+    text-align:center;
+    margin:30px 0;
+    font-size:30px;
+  }
+
+  .contenedor table th{
+    border:1px solid;
+    padding: 1em;
+  }
+
+  .contenedor table td{
+    border:1px solid;
+    padding: 1em;
+    text-align: center;
+  }
+
+   .tabla {
+    overflow-x: auto;
+    font-size: 14px;
+}
