@@ -2,9 +2,9 @@ import axios from "axios";
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import "../estilos/Formulario.css";
 
-const CrearFormulario = () => {
+const CrearFormulario = () => {    localStorage.clear();
     const [carnet, setCarnet] = useState("");
     const [nombre, setNombre] = useState("");
     const [direccion, setDireccion] = useState("");
@@ -12,11 +12,7 @@ const CrearFormulario = () => {
     const [telefono, setTelefono] = useState("");
     const [fechaNacimiento, setFechaNacimiento] = useState("");
     const [carrera, setCarrera] = useState("");
-    const [generarPoesia, setGenerarPoesia] = useState("");
-    const [fechaInscripcion, setFechaInscripcion] = useState("");
-    const [fechaDeclamacion, setFechaDeclamacion] = useState(""); 
-
-    var navigate = useNavigate();
+    const [generoPoesia, setGeneroPoesia] = useState("");
 
     function formulario() {
         var parametros = {
@@ -27,9 +23,7 @@ const CrearFormulario = () => {
             telefono: telefono,
             fechaNacimiento: fechaNacimiento,
             carrera: carrera,
-            generarPoesia: generarPoesia,
-            fechaInscripcion: fechaInscripcion,
-            fechaDeclamacion: fechaDeclamacion,
+            generoPoesia: generoPoesia,
         }
 
         axios
@@ -37,16 +31,15 @@ const CrearFormulario = () => {
             .then((res) => {
                 Swal.fire({
                     icon: "success",
-                    title: "Exito",
-                    text: "Nice",
+                    text: "Su fecha de Declamacion Es",
+                    title: res.data.Formulario.fechaDeclamacion
                 });
             })
-            .then(navigate("/"))
             .catch((error) => {
                 Swal.fire({
                     icon: "error",
-                    text: "Error",
-                    title: error.response.data.Error,
+                    text: "Error" ,
+                    title: error.response.data.mensaje,
                 });
             });
     }
@@ -57,7 +50,7 @@ const CrearFormulario = () => {
             <div className="vid-container">
                 <div className="inner-container">
                     <div className="box">
-                        <h1>Rellenar Formulario</h1>
+                        <h1>Formulario</h1>
 
                         <input
                             type="carnet"
@@ -112,7 +105,7 @@ const CrearFormulario = () => {
                         />
 
                         <input
-                            type="fechaNacimiento"
+                            type="date"
                             name="fechaNacimiento"
                             value={fechaNacimiento}
                             onChange={(n) => { setFechaNacimiento(n.target.value); }}
@@ -136,38 +129,15 @@ const CrearFormulario = () => {
                         <input
                             type="generarPoesia"
                             name="generarPoesia"
-                            value={generarPoesia}
-                            onChange={(n) => { setGenerarPoesia(n.target.value); }}
+                            value={generoPoesia}
+                            onChange={(n) => { setGeneroPoesia(n.target.value); }}
                             required
                             was-validated="true"
                             className="form-control form-control-lg"
                             placeholder="Ingresa tu Genero de Poesia"
                         />
 
-                        <input
-                            type="fechaInscripcion"
-                            name="fechaInscripcion"
-                            value={fechaInscripcion}
-                            onChange={(n) => { setFechaInscripcion(n.target.value); }}
-                            required
-                            was-validated="true"
-                            className="form-control form-control-lg"
-                            placeholder="Ingresa tu Fecha de Inscripcion"
-                        />
-
-                        <input
-                            type="fechaDeclamacion"
-                            name="fechaDeclamacion"
-                            value={fechaDeclamacion}
-                            onChange={(n) => { setFechaDeclamacion(n.target.value); }}
-                            required
-                            was-validated="true"
-                            className="form-control form-control-lg"
-                            placeholder="Ingresa tu Fecha de Inscripcion"
-                        />
-
-
-                        <button onClick={formulario}>
+                        <button type="sumit" onClick={formulario}>
                             Guardar datos
                         </button>
                     </div>
