@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/FrontEnd-LevelUp/static/css/main.1f4ebb29.css",
+    "main.js": "/FrontEnd-LevelUp/static/js/main.78f2aa64.js",
+    "index.html": "/FrontEnd-LevelUp/index.html",
+    "main.1f4ebb29.css.map": "/FrontEnd-LevelUp/static/css/main.1f4ebb29.css.map",
+    "main.78f2aa64.js.map": "/FrontEnd-LevelUp/static/js/main.78f2aa64.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f4ebb29.css",
+    "static/js/main.78f2aa64.js"
+  ]
+}
