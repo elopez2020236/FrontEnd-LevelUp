@@ -7,6 +7,9 @@ import "../estilos/reporte.css";
 function ReporteGeneral() {
     const [reporte, setDatos] = useState([])
     
+    var heroku = "https://shielded-lowlands-89389.herokuapp.com/";
+
+
     useEffect(() => {
       axios.get('http://localhost:3000/api/generarReporte')
       .then(res => setDatos(res.data.Formulario))
